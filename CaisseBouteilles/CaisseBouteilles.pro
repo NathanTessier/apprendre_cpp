@@ -8,10 +8,12 @@ SOURCES += \
     Contenant.cpp \
     caissedebieres.cpp \
     caissedebouteilles.cpp \
-    main.cpp
+    main.cpp \
+    palette.cpp
 
 HEADERS += \
     Carton.h \
     Contenant.h \
     caissedebieres.h \
-    caissedebouteilles.h
+    caissedebouteilles.h \
+    palette.h
