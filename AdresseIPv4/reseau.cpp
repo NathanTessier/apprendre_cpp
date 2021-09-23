@@ -1,5 +1,5 @@
 #include <iostream>
-#include "ipv4.h"
+#include "IPv4.h"
 using namespace std;
 void AfficherTableau(unsigned char *tab);
 int main()
@@ -11,13 +11,11 @@ int main()
     unsigned char premiereAdresse[4];
     unsigned char derniereAdresse[4];
 
-    unsigned char AdresseParDefault[4];
-    unsigned char AdresseReseauCopie[4];
-
     IPv4 uneAdresse(adresse, 24); // instanciation de la classe IPv4
     IPv4 uneAutreAdresse;
     IPv4 AdresseCopie(uneAdresse);
-    IPv4 adresse3 =uneAdresse;
+    IPv4 adresse3;
+    adresse3 = uneAdresse;
 
     cout << "Adresse IPv4 : ";
     AfficherTableau(adresse);
@@ -39,17 +37,18 @@ int main()
 
     cout << "Nombre de machine : " << uneAdresse.ObtenirNombreMachines() << endl;
 
-    uneAutreAdresse.ObtenirAdresseReseau(AdresseParDefault);
+    uneAutreAdresse.ObtenirAdresseReseau(reseau);
     cout << "Adresse réseau par défaut : ";
-    AfficherTableau(AdresseParDefault);
+    AfficherTableau(reseau);
 
-    AdresseCopie.ObtenirAdresseReseau(AdresseReseauCopie);
+    AdresseCopie.ObtenirAdresseReseau(reseau);
     cout << "Adresse réseau de l'adresse copiée : ";
-    AfficherTableau(AdresseReseauCopie);
+    AfficherTableau(reseau);
 
-    adresse3.ObtenirAdresseReseau(AdresseReseauCopie);
-    cout << "Adresse réseau de adresse3: ";
-    AfficherTableau(AdresseReseauCopie);
+    adresse3.ObtenirAdresseReseau(reseau);
+    cout << "Adresse réseau de adresse 3 : ";
+    AfficherTableau(reseau);
 
     return 0;
 }
+
